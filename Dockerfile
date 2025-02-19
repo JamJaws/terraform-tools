@@ -7,12 +7,12 @@ ARG TARGETARCH
 
 # Update & install dependencies
 RUN apt-get update && \
-    apt-get install -y curl wget git unzip tar jq python3 python3-pip lsb-release pipx && \
+    apt-get install -y curl wget git unzip tar jq python3 python3-pip lsb-release && \
     rm -rf /var/lib/apt/lists/*
 
 # Install pre-commit
-ENV PATH=/root/.local/bin:$PATH
-RUN pipx install pre-commit checkov
+#ENV PATH=/root/.local/bin:$PATH
+RUN pip install pre-commit checkov
 
 # Install Terraform and required HashiCorp tools
 RUN apt-get update && \
