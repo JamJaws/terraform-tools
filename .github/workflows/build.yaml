@@ -2,7 +2,8 @@ name: build
 
 on:
   push:
-
+    branches:
+      - main
 env:
   TEST_TAG: jamjaws/terraform-tools:test
 
@@ -42,7 +43,8 @@ jobs:
           context: .
 #          load: true
           platforms: linux/${{ matrix.arch }}
-          tags: ${{ env.TEST_TAG }}
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
 #      - name: Test
 #        run: |
 #          docker run --rm -v ./test.sh:/opt/test.sh ${{ env.TEST_TAG }} "sh" "-c" "/opt/test.sh"
