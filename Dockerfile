@@ -7,7 +7,7 @@ ARG TARGETARCH
 
 # Update & install dependencies
 RUN apt-get update && \
-    apt-get install -y curl wget git unzip tar jq python3 python3-pip lsb-release python3 python3-pip && \
+    apt-get install -y curl wget git unzip tar jq python3 python3-pip lsb-release python3-full python3-pip && \
     rm -rf /var/lib/apt/lists/*
 
 # Install pre-commit
