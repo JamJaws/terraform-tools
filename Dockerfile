@@ -11,7 +11,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install pre-commit
-#ENV PATH=/root/.local/bin:$PATH
+ENV PATH=/root/.local/bin:$PATH
 #RUN apt update && apt install python3-pre-commit
 RUN pipx install pre-commit checkov
 
